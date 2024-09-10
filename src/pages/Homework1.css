@@ -1,0 +1,81 @@
+/* src/pages/Homework1.css */
+.homework1-container {
+  font-family: Arial, sans-serif;
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 800px; /* to improve users experience  */
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-top: 20px;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-top: 15px;
+}
+
+h4 {
+  font-size: 1.2rem;
+  margin-top: 30px;
+}
+
+p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+hr {
+  margin: 20px 0;
+}
+
+blockquote {
+  font-style: italic;
+  padding: 10px;
+  border-left: 4px solid #ccc; /* to make it visually more appealing */
+  margin: 15px 0;
+}
+
+ol,
+ul {
+  margin-left: 20px;
+}
+
+ol li,
+ul li {
+  margin-bottom: 10px;
+}
+
+dl {
+  margin-top: 10px;
+}
+
+dt {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+dd {
+  margin-left: 20px;
+}
+
+footer.footer-section {
+  transform: translateY(
+    -50px
+  ); /* To Reduce the space between the kitty and the divider */
+}
+
+footer.footer-section .cat-animation {
+  transform: translateY(-10px);
+}
+
+footer.footer-section h4 {
+  margin: 0;
+  transform: translateY(-50px);
+}

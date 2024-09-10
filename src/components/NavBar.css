@@ -1,0 +1,107 @@
+/* src/components/NavBar.css */
+.navbar {
+  width: 100%; /* Make the navbar take full width */
+  position: fixed; /* Fix the navbar at the top */
+  top: 0;
+  left: 0;
+  z-index: 100; /* to ensure it stays above any components */
+  box-sizing: border-box; /* To include padding and border in width calculation */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: rgb(222, 219, 214);
+  color: white;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-logo {
+  cursor: pointer;
+  flex: 1;
+}
+
+.navbar-logo img {
+  height: 80px;
+  width: auto;
+}
+
+.navbar-links {
+  display: flex;
+  flex: 1;
+  list-style-type: none;
+  margin-left: 0;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.navbar-links a,
+.dropdown-btn {
+  text-decoration: none;
+  color: #1c2535;
+  font-size: 1.1rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: inherit;
+}
+
+.navbar-links a:hover,
+.dropdown-btn:hover {
+  color: #ff6200; /* Highlight color on hover */
+  cursor: pointer;
+}
+
+.dropdown-btn .arrow {
+  margin-left: 8px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #1c2535;
+  list-style: none;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-menu li {
+  margin: 10px 0;
+}
+
+.dropdown-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.dropdown-menu a:hover {
+  color: #ff6200;
+}
+
+.navbar-shop {
+  flex: 0;
+}
+
+.navbar-shop .shop-btn {
+  padding: 10px 20px;
+  background-color: #1c2535;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  border: 1px solid #ff6200;
+  transition: background-color 0.3s;
+}
+
+.navbar-shop .shop-btn:hover {
+  background-color: #ff6200;
+  color: #ffffff;
+}
