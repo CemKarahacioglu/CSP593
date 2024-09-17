@@ -58,7 +58,6 @@ const LoginForm: React.FC = () => {
 
           const { name, email } = response.data; // Get the name and email from the response
           login({ name, email }); // Pass the name and email to the login function from AuthContext
-
           // Redirect the user to the home or dashboard page after login
           navigate("/");
         }
