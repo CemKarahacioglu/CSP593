@@ -1,0 +1,183 @@
+/* src/components/NavBar.css */
+.navbar {
+  width: 100%; /* Make the navbar take full width */
+  position: fixed; /* Fix the navbar at the top */
+  top: 0;
+  left: 0;
+  z-index: 100; /* to ensure it stays above any components */
+  box-sizing: border-box; /* To include padding and border in width calculation */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: rgb(222, 219, 214);
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-logo {
+  cursor: pointer;
+}
+
+.navbar-logo img {
+  height: 80px;
+  width: auto;
+}
+
+.navbar-links {
+  display: flex;
+
+  list-style-type: none;
+  margin-left: 0;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.navbar-links a,
+.dropdown-btn {
+  text-decoration: none;
+  color: rgba(26, 0, 71, 1);
+  font-size: 1.1rem;
+  cursor: pointer;
+  background: none;
+  box-shadow: none !important;
+  border: none;
+  font-family: inherit;
+}
+
+.navbar-links a:hover,
+.dropdown-btn:hover {
+  color: rgba(26, 0, 71, 0.7); /* Highlight color on hover */
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.dropdown-btn:hover {
+  background-color: rgba(0, 0, 0, 0.001);
+}
+
+.dropdown-btn .arrow {
+  margin-left: 0px;
+  font-size: 14px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #1c2535;
+  list-style: none;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-menu li {
+  margin: 10px 0;
+}
+
+.dropdown-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.field-wrap input {
+  color: black;
+}
+
+.dropdown-menu a:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.navbar-sign .sign-btn {
+  padding: 10px 20px;
+  background-color: rgba(56, 40, 172, 1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  border: 1px solid #ffc107;
+  transition: background-color 0.3s;
+}
+
+.navbar-sign .sign-btn:hover {
+  background-color: rgba(28, 37, 53, 0.9);
+  color: #ffffff;
+}
+
+/* Style for the "Log in" button */
+.login-btn {
+  padding: 10px 25px;
+  color: #4d39c4; /* Button border and text color */
+  background-color: transparent;
+  border: 2px solid #4d39c4;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: background-color 0.3s, color 0.3s;
+  margin-right: 15px; /* Spacing between buttons */
+}
+
+.login-btn:hover {
+  background-color: rgba(
+    77,
+    57,
+    196,
+    0.1
+  ); /* Slight background change on hover */
+  color: #4d39c4; /* Maintain the text color */
+}
+
+/* Style for the "Get started" button */
+.get-started-btn {
+  padding: 10px 25px;
+  color: white;
+  background-color: #4d39c4; /* Purple background for "Get started" */
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.get-started-btn:hover {
+  background-color: #3b2b9b; /* Darker shade on hover */
+  color: white;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  color: #1c2535;
+}
+
+.login-section2 button {
+  padding: 5px 15px;
+  margin-top: 10px;
+  color: white;
+  background-color: #4d39c4;
+  border: none;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: normal;
+  transition: background-color 0.3s;
+}
+
+.profile-picture {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}

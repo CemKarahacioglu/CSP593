@@ -7,6 +7,7 @@ by more specific styles in compoentns */
   color-scheme: light dark; /* for dark light mode switching */
   color: rgba(0, 0, 0, 0.87); /* default text color black with alpha channel */
   background-color: #ffffff;
+  box-sizing: border-box;
 }
 
 body {
