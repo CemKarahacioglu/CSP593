@@ -48,12 +48,15 @@ const SignUpForm: React.FC = () => {
         );
         await delay(3000); // Simulate a 3 second delay
         console.log("Sending POST request to the backend...");
-        const response = await axios.post("http://localhost:8081/signup", {
-          firstName: values.firstName,
-          lastName: values.lastName,
-          email: values.email,
-          password: values.password,
-        });
+        const response = await axios.post(
+          "http://localhost:8081/users/signup",
+          {
+            firstName: values.firstName,
+            lastName: values.lastName,
+            email: values.email,
+            password: values.password,
+          }
+        );
         console.log("Response from server:", response.data);
         setSuccess(true); // on success set the success state to true
       } catch (error) {

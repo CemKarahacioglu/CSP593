@@ -1,0 +1,20 @@
+.delete-btn {
+  border: none;
+  width: 2rem;
+  background-color: transparent; /* Make the button transparent */
+  cursor: pointer;
+  padding: 3px;
+}
+
+.delete-btn:hover {
+  background-color: transparent; /* Change background color on hover */
+}
+
+.delete-icon {
+  color: rgb(97, 97, 97); /* Make the icon red */
+  font-size: 1.25rem; /* Adjust the size of the icon */
+}
+
+.delete-icon:hover {
+  color: darkred; /* Change color on hover to a darker red */
+}

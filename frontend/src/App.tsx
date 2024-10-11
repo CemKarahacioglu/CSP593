@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Homework1 from "./pages/Homework1";
 /* import Homework2 from "./pages/Homework2"; */
 import HomePage from "./pages/HomePage"; // Home or landing page
+import TwitterClone from "./pages/TwitterClone/TwitterClone";
 import UnderConstructionSection from "./pages/UnderConstruction";
 import LoginForm from "./pages/Auth/LoginForm";
 import SignUpForm from "./pages/Auth/SignUpForm";
@@ -20,6 +21,7 @@ const App: React.FC = () => {
         <div className={`main-content`}>
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/twitter" element={<TwitterClone />} />
             <Route path="/login" element={<LoginForm />} />
             <Route path="/signup" element={<SignUpForm />} />
             <Route path="/auth" element={<AuthForm />} />

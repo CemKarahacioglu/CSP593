@@ -46,7 +46,7 @@ const LoginForm: React.FC = () => {
         console.log("Adding delay before processing login...");
         await delay(3000); // Delay of 3 seconds
 
-        const response = await axios.post("http://localhost:8081/login", {
+        const response = await axios.post("http://localhost:8081/users/login", {
           email: values.email,
           password: values.password,
         });
@@ -56,8 +56,10 @@ const LoginForm: React.FC = () => {
           console.log("Login successful");
           setLoginError(""); // Clear any previous errors
 
-          const { name, email } = response.data; // Get the name and email from the response
-          login({ name, email }); // Pass the name and email to the login function from AuthContext
+          const { id, name, email } = response.data; // Get the name and email from the response
+          console.log("User ID from server:", id);
+
+          login({ id, name, email }); // Pass the name and email to the login function from AuthContext
           // Redirect the user to the home or dashboard page after login
           navigate("/");
         }
