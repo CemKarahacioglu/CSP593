@@ -59,10 +59,4 @@ Business Rule: A POST may have any number of COMMENTS, but each COMMENT must bel
 <POST> <may have> <any number> <COMMENTS>
 <COMMENT> <must belong to> <exactly one> <POST>
 
-!! TODO
-Put data model you use for this project here. if something is derived like BMI use brackets in ERD. ERD de
-relationship leri text halinde yaz mesela business rules: a movie may be stocked many times as a dvd. Each dvd of a movie must be a copy of exactly one movie
-business rules eklemen gerekiyor ERD icin, <entity> <minimum cardinality> <relationshop> <maximum> <cardinality> <entity>
-our posts may contain likes but it's not mandatory it also appllies to post itself as users dont have to post anything
-
 ![ERD Diagram](./ERD.png)
