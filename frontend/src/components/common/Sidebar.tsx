@@ -4,6 +4,7 @@ import { MdHomeFilled } from "react-icons/md";
 import { IoNotifications } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { BiLogOut } from "react-icons/bi";
+import { useAuth } from "../../context/AuthContext";
 
 import {
   FaHome,
@@ -17,6 +18,8 @@ import {
 } from "react-icons/fa";
 
 const Sidebar: React.FC = () => {
+  const { user, logout } = useAuth();
+
   return (
     <div className="sidebar">
       <div className="sidebar-nav">
@@ -45,7 +48,13 @@ const Sidebar: React.FC = () => {
           <FaEllipsisH className="icon" /> More
         </a>
       </div>
-      <button className="sidebar-tweet-btn">Tweet</button>
+      {/* Logout Button */}
+      {/* Conditionally render the Logout Button if the user is logged in */}
+      {user && (
+        <button className="sidebar-logout-btn" onClick={logout}>
+          <BiLogOut className="icon" /> Logout
+        </button>
+      )}
     </div>
   );
 };

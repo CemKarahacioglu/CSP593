@@ -12,19 +12,27 @@ app.use(cors());
 // Import routes
 const userRoutes = require("./routes/userRoutes");
 const postRoutes = require("./routes/postRoutes");
+const likeRoutes = require("./routes/likeRoutes");
+const commentRoutes = require("./routes/commentRoutes");
 
 // Initialize tables after the database is created and selected
 initializeDatabase(() => {
   const createUsersTable = require("./models/userModel");
   const createPostsTable = require("./models/postModel");
+  const createLikesTable = require("./models/likeModel");
+  const createCommentsTable = require("./models/commentModel");
 
-  createUsersTable(); // Create the users table
-  createPostsTable(); // Create the posts table
+  createUsersTable();
+  createPostsTable();
+  createLikesTable();
+  createCommentsTable();
 });
 
 // Use routes
 app.use("/users", userRoutes);
 app.use("/posts", postRoutes);
+app.use("/likes", likeRoutes);
+app.use("/comments", commentRoutes);
 
 // Start the server
 const PORT = process.env.PORT || 8081;

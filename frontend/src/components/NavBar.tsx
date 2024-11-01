@@ -43,6 +43,11 @@ const NavBar: React.FC = () => {
     };
   }, [dropdownOpen]);
 
+  // If user is logged in, don't render the navbar
+  if (user) {
+    return null;
+  }
+
   return (
     <nav className="navbar">
       <div className="navbar-logo">
@@ -51,73 +56,13 @@ const NavBar: React.FC = () => {
         </Link>
       </div>
 
-      <ul className="navbar-links">
-        <li className="nav-item" ref={dropdownRef}>
-          <button className="dropdown-btn" onClick={toggleDropdown}>
-            Homeworks
-            <span className="arrow">&#9660;</span>
-          </button>
-          {dropdownOpen && (
-            <ul className="dropdown-menu">
-              <li>
-                <Link to="/homework1" onClick={closeDropdown}>
-                  Homework1
-                </Link>
-              </li>
-              <li>
-                <Link to="/under-construction" onClick={closeDropdown}>
-                  Homework2
-                </Link>
-              </li>
-              <li>
-                <Link to="/under-construction" onClick={closeDropdown}>
-                  Homework3
-                </Link>
-              </li>
-              <li>
-                <Link to="/under-construction" onClick={closeDropdown}>
-                  Homework4
-                </Link>
-              </li>
-            </ul>
-          )}
-        </li>
-        <li>
-          <Link to="/under-construction">About</Link>
-        </li>
-        <li>
-          <Link to="/under-construction">FAQ'S</Link>
-        </li>
-      </ul>
-
       <div className="navbar-sign">
-        {user ? (
-          // Show the user's profile picture and name when logged in
-          <div className="login-section2">
-            <div>
-              <div className="user-info">
-                <img
-                  src={DefaultProfilePicture}
-                  alt={user.name}
-                  className="profile-picture"
-                />
-                <span>{user.name}</span>
-              </div>
-            </div>
-
-            <button onClick={logout}>logout</button>
-          </div>
-        ) : (
-          // Default buttons if the user is not logged in
-          <>
-            <Link to="/login" className="login-btn">
-              Log in
-            </Link>
-            <Link to="/signup" className="get-started-btn">
-              Get started
-            </Link>
-          </>
-        )}
+        <Link to="/login" className="login-btn">
+          Log in
+        </Link>
+        <Link to="/signup" className="get-started-btn">
+          Get started
+        </Link>
       </div>
     </nav>
   );

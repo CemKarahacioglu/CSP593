@@ -20,8 +20,8 @@ const App: React.FC = () => {
         <NavBar />
         <div className={`main-content`}>
           <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/twitter" element={<TwitterClone />} />
+            {/*  <Route path="/" element={<HomePage />} /> */}
+            <Route path="/" element={<TwitterClone />} />
             <Route path="/login" element={<LoginForm />} />
             <Route path="/signup" element={<SignUpForm />} />
             <Route path="/auth" element={<AuthForm />} />

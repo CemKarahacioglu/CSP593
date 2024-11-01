@@ -1,4 +1,16 @@
-## Setup instructions
+# Overview
+
+ChimeIn is a social platform where users can post content, it's a space designed for sharing thoughts, gifs, images
+
+## Features
+
+- User Authentication: Secure user registrationg and login
+- Post Creation: Users can create posts to share their thoughts and images
+- Commenting: Users can add their thoughts and replies under any post
+- Likes: Each post shows how many likes it has received
+- Feed Display: View a real-time feed of all posts , showing the latest posts at the top
+
+# Setup instructions
 
 0. Start the mysql server
 
