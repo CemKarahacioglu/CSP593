@@ -7,8 +7,10 @@ const createPostsTable = () => {
       user_id INT NOT NULL,
       content TEXT NOT NULL,
       image_url VARCHAR(255),
+      retweeted_post_id INT DEFAULT NULL,
       created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-      FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
+      FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE,
+      FOREIGN KEY (retweeted_post_id) REFERENCES posts(post_id) ON DELETE CASCADE
     )
   `;
   db.query(createPostsTableQuery, (err) => {

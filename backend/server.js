@@ -14,6 +14,7 @@ const userRoutes = require("./routes/userRoutes");
 const postRoutes = require("./routes/postRoutes");
 const likeRoutes = require("./routes/likeRoutes");
 const commentRoutes = require("./routes/commentRoutes");
+const retweetRoutes = require("./routes/retweetRoutes");
 
 // Initialize tables after the database is created and selected
 initializeDatabase(() => {
@@ -33,6 +34,7 @@ app.use("/users", userRoutes);
 app.use("/posts", postRoutes);
 app.use("/likes", likeRoutes);
 app.use("/comments", commentRoutes);
+app.use("/retweets", retweetRoutes);
 
 // Start the server
 const PORT = process.env.PORT || 8081;
