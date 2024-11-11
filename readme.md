@@ -73,4 +73,4 @@ Business Rule: A POST may have any number of COMMENTS, but each COMMENT must bel
 
 ![ERD Diagram](./ERD.png)
 
-![Relations] (./Relations.png)
+![Relations](./Relations.png)
