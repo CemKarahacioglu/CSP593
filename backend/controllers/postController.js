@@ -1,6 +1,6 @@
 // postController.js
 const { db } = require("../config/db");
-const cloudinary = require("cloudinary").v2;
+const cloudinary = require("cloudinary").v2; // import cloudinary for image upload
 const dotenv = require("dotenv");
 
 dotenv.config(); // Load environment variables
@@ -14,29 +14,33 @@ cloudinary.config({
 
 // Create a post with optional image upload
 const createPost = async (req, res) => {
-  const { userId, content } = req.body;
-  const imageFile = req.file;
+  const { userId, content } = req.body; // Get user ID and content from request body
+  const imageFile = req.file; // Get image file from request
 
   if (!userId || !content) {
     return res
-      .status(400)
+      .status(400) // Bad Request
       .json({ message: "User ID and content are required" });
   }
 
-  let imageUrl = null;
+  let imageUrl = null; // Initialize imageUrl to null by default
   if (imageFile) {
+    // Check if an image file is uploaded
     try {
+      // if image file is uploaded, try to upload it to Cloudinary
       const result = await cloudinary.uploader.upload(imageFile.path, {
         folder: "tweet-images",
       });
-      imageUrl = result.secure_url;
+      imageUrl = result.secure_url; // Get the secure URL of the uploaded image
     } catch (error) {
       console.error("Error uploading image:", error);
       return res.status(500).json({ message: "Image upload failed" });
     }
   }
-
+  // Insert the post into the database
   const query = `INSERT INTO posts (user_id, content, image_url) VALUES (?, ?, ?)`;
+
+  // Execute the query
   db.query(query, [userId, content, imageUrl], (err, result) => {
     if (err) {
       console.error("Error inserting post:", err);

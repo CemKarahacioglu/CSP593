@@ -2,7 +2,7 @@ const { db } = require("../config/db");
 
 // Add a Retweet by creating a new post entry with retweeted_post_id and original content
 exports.addRetweet = (req, res) => {
-  const { userId, postId } = req.body;
+  const { userId, postId } = req.body; // Get user ID and post ID from request body
 
   const getOriginalPostQuery = `
     SELECT posts.content, posts.image_url, users.user_id, users.first_name, users.last_name
@@ -11,6 +11,7 @@ exports.addRetweet = (req, res) => {
     WHERE posts.post_id = ?
   `;
 
+  // Fetch the original post content and image URL
   db.query(getOriginalPostQuery, [postId], (err, results) => {
     if (err) {
       console.error("Error fetching original post:", err);

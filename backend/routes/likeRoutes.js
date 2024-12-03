@@ -1,6 +1,5 @@
-// likeRoutes.js
 const express = require("express");
-const router = express.Router();
+const router = express.Router(); // Create a new router object
 const likeController = require("../controllers/likeController");
 
 // Like or unlike a post

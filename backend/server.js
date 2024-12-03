@@ -5,11 +5,11 @@ const { initializeDatabase } = require("./config/db"); // Import database initia
 
 dotenv.config(); // Load .env file
 
-const app = express();
-app.use(express.json());
-app.use(cors());
+const app = express(); // Create an Express app instance
+app.use(express.json()); // Parse JSON bodies in requests to req.body
+app.use(cors()); // cors middleware to allow cross-origin requests
 
-// Import routes
+// Import routes for users, posts, likes, comments, and retweets
 const userRoutes = require("./routes/userRoutes");
 const postRoutes = require("./routes/postRoutes");
 const likeRoutes = require("./routes/likeRoutes");
@@ -29,14 +29,14 @@ initializeDatabase(() => {
   createCommentsTable();
 });
 
-// Use routes
+// Use routes for users, posts, likes, comments, and retweets
 app.use("/users", userRoutes);
 app.use("/posts", postRoutes);
 app.use("/likes", likeRoutes);
 app.use("/comments", commentRoutes);
 app.use("/retweets", retweetRoutes);
 
-// Start the server
+// Start the server on port 8081
 const PORT = process.env.PORT || 8081;
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);

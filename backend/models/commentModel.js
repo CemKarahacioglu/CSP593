@@ -1,6 +1,8 @@
 const { db } = require("../config/db");
 
+// Create the comments table if it does not exist already
 const createCommentsTable = () => {
+  // Query to create the comments table
   const createCommentsTableQuery = `
     CREATE TABLE IF NOT EXISTS comments (
       comment_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -13,6 +15,7 @@ const createCommentsTable = () => {
     )
   `;
 
+  // Execute the query to create the comments table
   db.query(createCommentsTableQuery, (err) => {
     if (err) {
       console.error("Error creating comments table:", err);
